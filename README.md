@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🎟️ Frontend – Ticket Management App (Parque Explora)
 
-## Getting Started
+Este repositorio contiene el frontend de la aplicación generadora y gestora de tickets desarrollada como parte de la Prueba Técnica – Parque Explora.
 
-First, run the development server:
+La aplicación permite a los usuarios:
 
-```bash
+Autenticarse en el sistema
+
+Crear y consultar tickets
+
+Acceder a un panel administrativo (usuarios con rol Admin)
+
+Gestionar tickets y usuarios desde el frontend
+
+El frontend se comunica con una API REST serverless desplegada en AWS.
+
+🧱 Arquitectura
+
+Framework: Next.js
+
+Tipo de aplicación: Frontend desacoplado
+
+Despliegue: Amazon S3 (Static Website Hosting)
+
+Consumo de API: Amazon API Gateway + AWS Lambda
+
+La solución sigue una arquitectura serverless, separando completamente frontend y backend.
+
+🚀 URL de la aplicación
+
+👉 Aplicación desplegada:
+http://front-tickets-project.s3-website.us-east-2.amazonaws.com
+
+🔌 Backend (API)
+
+El frontend consume una API REST desplegada en AWS:
+
+👉 API Base URL:
+https://rk7smql7xc.execute-api.us-east-2.amazonaws.com
+
+⚙️ Instalación y ejecución local
+
+Clonar el repositorio:
+
+git clone https://github.com/nicoguaro20/frontTicketsProject.git
+
+
+Instalar dependencias:
+
+npm install
+
+
+Ejecutar en modo desarrollo:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+La aplicación estará disponible en:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+🏗️ Build para producción
 
-To learn more about Next.js, take a look at the following resources:
+Para generar la versión estática del proyecto:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+El resultado se genera en la carpeta:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+/out
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Esta carpeta es la utilizada para el despliegue en Amazon S3.
+
+📌 Notas
+
+El frontend está diseñado para trabajar con una API REST externa.
+
+Las rutas y permisos dependen del rol del usuario autenticado.
+
+La aplicación fue desarrollada como parte de una prueba técnica, priorizando claridad, arquitectura y buenas prácticas.
+
+👤 Autor
+
+Juan Nicolás García Guarín
+📧 jungarciagu@unal.edu.co
